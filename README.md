@@ -1,4 +1,4 @@
-# Credit rating forecast for credit card issuance
+# Creditworthiness forecast for credit card issuance 
 
 You have been hired by Pro National Bank as a data scientist, your first task is to create a model capable of estimating the creditworthiness of customers, in order to help the dedicated team understand whether or not to accept the request for the credit card.
 
