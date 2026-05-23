@@ -50,7 +50,7 @@ https://proai-datasets.s3.eu-west-3.amazonaws.com/credit_scoring.csv
 | Gradient Boosting rfe k:30 | 0.96 | 0.823 | 0.699 | 0.999 | 0.979 | 5 |
 | Gradient Boosting rfe k:20 | 0.96 | 0.823 | 0.699 | 0.999 | 0.979 | 5 |
 
-*Top 5 of 305 configurations. Full results in `sorted_results_df.csv`.*
+*Top 5 of 291 configurations. Full results in `sorted_results_df.csv`.*
 
 **Best model: Random Forest (Embedded)** - the only configuration achieving perfect Recall (1.000, **0 false negatives**) with F1 = 0.823. Total training time: ~226 minutes.
 
