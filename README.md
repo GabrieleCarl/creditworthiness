@@ -6,7 +6,7 @@ Binary classification model to predict customer creditworthiness, built for a fi
 
 Given anonymized customer data, the model predicts whether a customer has a high credit rating (TARGET=1) or not (TARGET=0). The task presents a significant class imbalance: only 8.78% of observations belong to the positive class.
 
-The project evaluates **8 base classifiers** across **6 feature selection strategies**, resulting in 305 model configurations compared systematically.
+The project evaluates **8 base classifiers** across **6 feature selection strategies**, resulting in 291 model configurations compared systematically.
 
 ## Dataset
 
@@ -40,7 +40,7 @@ https://proai-datasets.s3.eu-west-3.amazonaws.com/credit_scoring.csv
 
 ## Models
 
-305 configurations evaluated (8 classifiers × 6 feature selection strategies + hyperparameter tuning). Final ranking filtered by Accuracy > 0.90 and sorted by Recall to minimize false negatives - failing to identify a creditworthy customer is the costliest error in this context.
+291 configurations evaluated (8 classifiers × 6 feature selection strategies + hyperparameter tuning). Final ranking filtered by Accuracy > 0.90 and sorted by Recall to minimize false negatives - failing to identify a creditworthy customer is the costliest error in this context.
 
 | Model | Accuracy | F1 | Precision | Recall | ROC-AUC | FN |
 |---|---|---|---|---|---|---|
