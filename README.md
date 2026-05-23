@@ -88,6 +88,6 @@ Open `Prediction_of_creditworthiness_for_issuing_a_credit_card.ipynb` and run ce
 creditworthiness/
 ├── Prediction_of_creditworthiness_for_issuing_a_credit_card.ipynb   # Main notebook
 ├── environment.yml                                                    # Conda environment
-├── results_df.csv                                                     # All 305 model results
+├── results_df.csv                                                     # All 401 model results
 └── sorted_results_df.csv                                              # Final ranked results
 ```
