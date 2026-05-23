@@ -18,9 +18,9 @@ https://proai-datasets.s3.eu-west-3.amazonaws.com/credit_scoring.csv
 
 **Key preprocessing decisions:**
 - `DAYS_BIRTH` converted to positive values (`DAYS_BIRTH_POSITIVE`)
-- `FLAG_MOBIL` dropped — 100% of values identical, zero predictive value
-- `DAYS_EMPLOYED` anomalies handled — values exceeding human lifespan (~1,000 years) identified as Pensioners and treated separately
-- `OCCUPATION_TYPE` NaN values (13.44% of data) replaced with `"unknown"` — neither deletion nor imputation was justified after systematic analysis across all other features
+- `FLAG_MOBIL` dropped - 100% of values identical, zero predictive value
+- `DAYS_EMPLOYED` anomalies handled - values exceeding human lifespan (~1,000 years) identified as Pensioners and treated separately
+- `OCCUPATION_TYPE` NaN values (13.44% of data) replaced with `"unknown"` - neither deletion nor imputation was justified after systematic analysis across all other features
 
 ## Pipeline
 
@@ -35,12 +35,12 @@ https://proai-datasets.s3.eu-west-3.amazonaws.com/credit_scoring.csv
 3. Correlation Filtering
 4. VIF (Variance Inflation Factor)
 5. SelectKBest (k = 5, 10, 15, 20, 25, 30, 35, 40)
-6. RFE — Recursive Feature Elimination (k = 5–40)
-7. Embedded Methods — hyperparameter tuning with RandomizedSearchCV (regularization, tree depth, class weighting)
+6. RFE - Recursive Feature Elimination (k = 5–40)
+7. Embedded Methods - hyperparameter tuning with RandomizedSearchCV (regularization, tree depth, class weighting)
 
 ## Models
 
-305 configurations evaluated (8 classifiers × 6 feature selection strategies + hyperparameter tuning). Final ranking filtered by Accuracy > 0.90 and sorted by Recall to minimize false negatives — failing to identify a creditworthy customer is the costliest error in this context.
+305 configurations evaluated (8 classifiers × 6 feature selection strategies + hyperparameter tuning). Final ranking filtered by Accuracy > 0.90 and sorted by Recall to minimize false negatives - failing to identify a creditworthy customer is the costliest error in this context.
 
 | Model | Accuracy | F1 | Precision | Recall | ROC-AUC | FN |
 |---|---|---|---|---|---|---|
@@ -52,13 +52,13 @@ https://proai-datasets.s3.eu-west-3.amazonaws.com/credit_scoring.csv
 
 *Top 5 of 305 configurations. Full results in `sorted_results_df.csv`.*
 
-**Best model: Random Forest (Embedded)** — the only configuration achieving perfect Recall (1.000, **0 false negatives**) with F1 = 0.823. Total training time: ~226 minutes.
+**Best model: Random Forest (Embedded)** - the only configuration achieving perfect Recall (1.000, **0 false negatives**) with F1 = 0.823. Total training time: ~226 minutes.
 
 
 ## Key Findings
 
 - Tree-based ensemble methods (GBM, Random Forest, XGBoost) consistently outperform linear models on this dataset
-- Feature selection strategies did not significantly improve performance over the base configuration — the full feature set was already informative
+- Feature selection strategies did not significantly improve performance over the base configuration - the full feature set was already informative
 - Logistic Regression achieves high Recall only when Accuracy is sacrificed (0.828), making it unsuitable for production despite its interpretability
 
 ## Tech Stack
